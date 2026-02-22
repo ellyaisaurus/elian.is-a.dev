@@ -1,0 +1,26 @@
+/* src/componentes/cursor-magnetico/cursor-magnetico.module.css */
+.cursor-anillo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--accent-terra);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  /* El mix-blend-mode hace que el color reaccione con el fondo, dando un toque WebGL */
+  mix-blend-mode: screen; 
+}
+
+.cursor-punto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-terra);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 10000;
+}

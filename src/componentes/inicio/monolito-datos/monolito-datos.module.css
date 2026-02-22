@@ -1,0 +1,184 @@
+/* src/componentes/inicio/monolito-datos/monolito-datos.module.css */
+
+.takeover-absoluto {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 8000; 
+  background-color: var(--bg-deep);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: block; 
+}
+
+.marca-agua-colosal {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-title);
+  font-size: clamp(8rem, 20vw, 25rem);
+  color: var(--text-title);
+  opacity: 0.03;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.grid-monolito {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  align-content: start;
+}
+
+@media (min-width: 1025px) {
+  .grid-monolito {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 8rem 4rem;
+  }
+}
+
+.columna-informacion {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+@media (min-width: 1025px) {
+  .columna-informacion {
+    grid-column: 5 / 12;
+  }
+}
+
+.bloque-dato {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mascara-texto {
+  overflow: hidden;
+  padding-bottom: 0.2rem;
+}
+
+.titulo-seccion {
+  font-family: var(--font-code);
+  color: var(--accent-terra);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(58, 53, 48, 0.5); 
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.texto-impacto {
+  font-family: var(--font-title);
+  color: var(--text-title);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.lista-arquitectura {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lista-arquitectura li {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  font-size: clamp(1rem, 1.25vw, 1.15rem);
+  line-height: 1.6;
+  font-weight: 300;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.viñeta-codigo {
+  color: var(--accent-data);
+  font-family: var(--font-code);
+  font-weight: bold;
+  margin-top: 0.2rem;
+}
+
+.contenedor-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.tag-monolito {
+  border: 1px solid var(--border-taupe);
+  background: transparent;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.panel-controles {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1.5rem; /* Separación entre el botón de cerrar y el de visitar */
+}
+
+.btn-colapsar {
+  background: transparent;
+  border: 1px solid var(--border-taupe);
+  color: var(--text-body);
+  padding: 1rem 3rem;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-colapsar:hover {
+  border-color: var(--text-muted);
+  color: var(--text-title);
+}
+
+.btn-visitar {
+  background: var(--accent-terra);
+  border: 1px solid var(--accent-terra);
+  color: var(--bg-deep);
+  padding: 1rem 3rem;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.btn-visitar:hover {
+  background: transparent;
+  color: var(--accent-terra);
+  box-shadow: 0px 4px 20px rgba(224, 90, 61, 0.25);
+}

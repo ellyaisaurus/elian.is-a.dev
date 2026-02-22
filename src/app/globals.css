@@ -143,3 +143,10 @@ body {
 .color-swatch:hover {
   transform: translateY(-10px);
 }
+
+/* Eliminación del cursor genérico solo en dispositivos con ratón de alta precisión */
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
+}

@@ -1,0 +1,114 @@
+/* // src/componentes/escenario-principal/escenario-principal.module.css */
+
+.contenedor-scroll {
+  height: 600vh; /* Aumentado a 600vh para permitir 6 actos fluidos (incluye tu CV) */
+  position: relative;
+  background-color: var(--bg-deep);
+}
+
+.camara-fija {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, var(--bg-basalt) 0%, var(--bg-deep) 100%);
+}
+
+.escena-absoluta {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  pointer-events: none;
+}
+
+.escena-activa {
+  pointer-events: auto;
+}
+
+.etiqueta-sistema {
+  font-family: var(--font-code);
+  color: var(--accent-data);
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.titulo-cinematico {
+  font-family: var(--font-title);
+  color: var(--text-title);
+  font-size: clamp(3rem, 8vw, 7rem);
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  text-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.acento {
+  color: var(--accent-terra);
+  font-style: italic;
+}
+
+.descripcion-escena {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  max-width: 60ch;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.metadatos-tecnicos {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tag-tecnico {
+  border: 1px solid var(--border-taupe);
+  background-color: rgba(38, 35, 32, 0.5); 
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: var(--font-code);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  backdrop-filter: blur(4px);
+}
+
+.btn-explorar {
+  margin-top: 1rem;
+  background-color: transparent;
+  border: 1px solid var(--accent-terra);
+  color: var(--accent-terra);
+  padding: 1rem 2.5rem;
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: auto; 
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-explorar:hover {
+  background-color: var(--accent-terra);
+  color: var(--bg-deep);
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 15px rgba(224, 90, 61, 0.3);
+}

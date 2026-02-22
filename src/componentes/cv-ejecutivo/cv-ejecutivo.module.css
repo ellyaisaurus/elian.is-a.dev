@@ -1,0 +1,305 @@
+/* src/componentes/cv-ejecutivo/cv-ejecutivo.module.css */
+
+.takeover-cv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 8000;
+  background-color: var(--bg-deep);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: block;
+}
+
+.marca-agua-colosal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-title);
+  font-size: clamp(8rem, 20vw, 25rem);
+  color: var(--text-title);
+  opacity: 0.02;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 0;
+  user-select: none;
+}
+
+.grid-cv {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1600px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 6rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+  align-content: start;
+}
+
+@media (min-width: 1025px) {
+  .grid-cv {
+    grid-template-columns: repeat(12, 1fr);
+    padding: 8rem 4rem;
+  }
+}
+
+/* Máscara global para la animación cinemática (Text Reveal) */
+.mascara-texto {
+  overflow: hidden;
+  padding-bottom: 0.2rem;
+}
+
+/* ==========================================
+   COLUMNA IZQUIERDA: IDENTIDAD (Sticky)
+========================================== */
+.columna-identidad {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1025px) {
+  .columna-identidad {
+    grid-column: 1 / 6;
+    position: sticky;
+    top: 8rem;
+    height: fit-content;
+  }
+}
+
+.contenedor-nombre {
+  position: relative;
+  display: inline-block;
+  cursor: crosshair;
+}
+
+.nombre-real {
+  font-family: var(--font-title);
+  font-size: clamp(4rem, 8vw, 7rem);
+  color: var(--text-title);
+  line-height: 1;
+  display: block;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.nombre-dev {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: var(--font-title);
+  font-size: clamp(4rem, 8vw, 7rem);
+  color: var(--accent-terra);
+  font-style: italic;
+  line-height: 1;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+}
+
+.contenedor-nombre:hover .nombre-real {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+.contenedor-nombre:hover .nombre-dev {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.titulo-profesional {
+  font-family: var(--font-code);
+  color: var(--text-muted);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.seccion-idiomas {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.item-idioma {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.tag-idioma {
+  background-color: var(--text-body);
+  color: var(--bg-deep);
+  padding: 0.2rem 0.5rem;
+  font-weight: bold;
+}
+
+.manifiesto {
+  font-family: var(--font-body);
+  color: var(--text-body);
+  font-size: 1.25rem;
+  line-height: 1.8;
+  font-weight: 300;
+  border-left: 2px solid var(--accent-terra);
+  padding-left: 1.5rem;
+}
+
+/* ==========================================
+   COLUMNA DERECHA: DATOS DUROS (Scroll)
+========================================== */
+.columna-datos {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+@media (min-width: 1025px) {
+  .columna-datos {
+    grid-column: 7 / 13;
+  }
+}
+
+.bloque-cv {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.encabezado-bloque {
+  font-family: var(--font-code);
+  color: var(--accent-terra);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(58, 53, 48, 0.5); /* border-taupe semitransparente */
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+/* Diseño Asimétrico para las Soluciones (Necesidades que cubres) */
+.item-solucion {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 2rem;
+}
+
+.numero-solucion {
+  font-family: var(--font-title);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  color: var(--border-taupe);
+  line-height: 1;
+  font-style: italic;
+}
+
+.contenido-solucion h4 {
+  font-family: var(--font-body);
+  color: var(--text-title);
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.contenido-solucion p {
+  font-family: var(--font-body);
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+/* Diseño Crudo para el Stack Tecnológico */
+.grupo-tecnico {
+  margin-bottom: 2.5rem;
+}
+
+.label-tecnico {
+  font-family: var(--font-code);
+  color: var(--accent-data);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.contenedor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag-tecnico-cv {
+  border: 1px solid var(--border-taupe);
+  background: transparent;
+  padding: 0.5rem 1.25rem;
+  border-radius: 2px;
+  font-family: var(--font-code);
+  font-size: 0.9rem;
+  color: var(--text-body);
+  transition: all 0.3s ease;
+}
+
+.tag-tecnico-cv:hover {
+  border-color: var(--accent-terra);
+  color: var(--accent-terra);
+}
+
+/* Diseño de Terminal para Certificaciones */
+.lista-certificaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.item-cert {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.titulo-cert {
+  font-family: var(--font-title);
+  color: var(--text-title);
+  font-size: 1.35rem;
+}
+
+.subtitulo-cert {
+  font-family: var(--font-code);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Controles */
+.panel-controles {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-taupe);
+}
+
+.btn-cerrar {
+  background: transparent;
+  border: 1px solid var(--border-taupe);
+  color: var(--text-body);
+  padding: 1rem 3rem;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.btn-cerrar:hover {
+  border-color: var(--accent-terra);
+  color: var(--accent-terra);
+}

@@ -1,0 +1,127 @@
+/* src/componentes/inicio/panel-detalle/panel-detalle.module.css */
+.overlay-cristal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(13, 12, 11, 0.7); /* bg-deep con opacidad */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 5000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.panel-lateral {
+  width: 100%;
+  max-width: 650px;
+  height: 100vh;
+  background-color: var(--bg-basalt);
+  border-left: 1px solid var(--border-taupe);
+  padding: 4rem 3rem;
+  overflow-y: auto;
+  box-shadow: -20px 0 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.cabecera-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border-taupe);
+  padding-bottom: 2rem;
+}
+
+.titulo-panel {
+  font-family: var(--font-title);
+  color: var(--text-title);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.tagline-panel {
+  font-family: var(--font-code);
+  color: var(--accent-terra);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.boton-cerrar {
+  background: none;
+  border: 1px solid var(--border-taupe);
+  color: var(--text-muted);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.boton-cerrar:hover {
+  border-color: var(--accent-terra);
+  color: var(--accent-terra);
+  transform: rotate(90deg);
+}
+
+.seccion-datos h3 {
+  font-family: var(--font-body);
+  color: var(--text-title);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.texto-descriptivo {
+  color: var(--text-body);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.lista-ejecucion {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lista-ejecucion li {
+  color: var(--text-body);
+  font-weight: 300;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.6;
+}
+
+.lista-ejecucion li::before {
+  content: '>';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent-terra);
+  font-family: var(--font-code);
+  font-weight: bold;
+}
+
+.contenedor-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag-stack {
+  border: 1px solid var(--border-taupe);
+  background-color: var(--surface-earth);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-family: var(--font-code);
+  font-size: 0.85rem;
+  color: var(--accent-data);
+}

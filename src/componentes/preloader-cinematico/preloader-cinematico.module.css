@@ -1,0 +1,76 @@
+/* src/componentes/preloader-cinematico/preloader-cinematico.module.css */
+
+.pantalla-arranque {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-deep);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999; /* Por encima del cursor y de todo el DOM */
+  overflow: hidden;
+}
+
+.contenedor-datos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 2rem;
+}
+
+.etiqueta-carga {
+  font-family: var(--font-code);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.contador-numerico {
+  font-family: var(--font-title);
+  color: var(--text-title);
+  font-size: clamp(4rem, 10vw, 6rem);
+  line-height: 1;
+  font-weight: 400;
+  display: flex;
+  align-items: baseline;
+}
+
+.simbolo-porcentaje {
+  font-family: var(--font-code);
+  color: var(--accent-terra);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  margin-left: 0.5rem;
+}
+
+.barra-progreso-base {
+  width: 100%;
+  height: 2px;
+  background-color: var(--border-taupe);
+  position: relative;
+  overflow: hidden;
+}
+
+.barra-progreso-llena {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: var(--accent-terra);
+  width: 0%; /* Se controlará vía React/Framer Motion */
+}
+
+.status-logistico {
+  font-family: var(--font-code);
+  color: var(--accent-data);
+  font-size: 0.75rem;
+  align-self: flex-end;
+  opacity: 0.7;
+}
